@@ -1,0 +1,166 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 55px 0 45px;
+    transition: background-color 0.3s ease;
+    z-index: 2000;
+
+    .container {
+        max-width: 1600px;
+        padding: 0 60px;
+
+        @include tablet() {
+            padding: 0 30px;
+        }
+
+        @include mobile() {
+            padding: 0 15px;
+        }
+    }
+}
+
+.navbar__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// Navbar navigations
+.navbar__navigations {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    transition: gap 200ms ease;
+
+    @include media(0px, 1440px) {
+        gap: 60px;
+    }
+}
+
+.logo {
+    z-index: 1101;
+}
+
+.navbar__list {
+    display: flex;
+    align-items: center;
+    gap: 46.4px;
+
+    @include media(0px, 1024px) {
+        width: 60%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: -100%;
+
+        background-color: #333;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 60px;
+        padding-top: 150px;
+        z-index: 1100;
+        transition: left 0.3s ease;
+    }
+
+    @include tablet() {
+        padding-left: 30px;
+    }
+
+    @include mobile() {
+        width: 80%;
+        padding-left: 15px;
+    }
+}
+
+.navbar__active {
+    left: 0;
+}
+
+.navbar__list-item a {
+    color: $white;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 136.2%;
+    transition: all 0.3s ease;
+}
+
+.navbar__list-item:hover a,
+.navbar__list-item.active a {
+    color: $green;
+}
+
+.navbar__list-item__socials {
+    display: none;
+    align-items: center;
+    gap: 10px;
+
+    @include media(0px, 1024px) {
+        display: flex;
+    }
+}
+
+// End of navigations
+
+// Navbar socials 
+.navbar__socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include media(0px, 1024px) {
+        display: none;
+    }
+}
+
+// Hmaburger icon
+
+.hamburger-wrap {
+    width: 35px;
+    height: 35px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.5s;
+
+    @include media(0px, 1024px) {
+        display: flex;
+    }
+
+    z-index: 1101;
+}
+
+.hamburger-line:nth-child(1) {
+    transition: transform 0.5s;
+}
+
+.hamburger-line:nth-child(3) {
+    margin-top: -2px;
+    transition: transform 0.5s;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 3px;
+    background-color: $white;
+}
+
+.hamburger_active {
+    gap: 0px;
+
+    .hamburger-line:nth-child(even) {
+        display: none;
+    }
+
+    .hamburger-line:nth-child(1) {
+        transform: rotate(var(--i));
+    }
+
+    .hamburger-line:nth-child(3) {
+        margin-top: -2px;
+        transform: rotate(var(--i));
+    }
+}

@@ -1,0 +1,43 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    background: #1E1E1E;
+}
+
+.container {
+    max-width: 1365px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @include media(0px, 1440px) {
+        padding: 0 60px;
+    }
+
+    @include tablet() {
+        padding: 0 30px;
+    }
+
+    @include mobile() {
+        padding: 0 15px;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}

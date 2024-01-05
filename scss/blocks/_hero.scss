@@ -1,0 +1,411 @@
+.hero {
+    width: 100%;
+    // height: 1000px;
+
+    .container {
+        position: relative;
+    }
+}
+
+// Hero carusel
+.heroCarusel {
+    width: 100%;
+    height: 1000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: height 200ms ease;
+
+    @include media(0px, 1440px) {
+        height: 800px;
+    }
+
+    @include mobile() {
+        height: 700px;
+    }
+
+    @include media(0px, 540px) {
+        height: 600px;
+    }
+}
+
+.swiper-slide {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+}
+
+.swiper-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-carusel {
+    max-width: 1480px;
+    margin: 0 auto;
+    position: relative;
+}
+
+// Carusel controller
+.carusel_control {
+    position: absolute;
+    right: 0;
+    top: 350px;
+    z-index: 1000;
+    transition: margin-right 200ms ease;
+
+    @include media(0px, 1600px) {
+        margin-right: 60px;
+    }
+
+    @include tablet() {
+        margin-right: 30px;
+        top: 300px;
+    }
+
+    @include mobile() {
+        margin-right: 15px;
+        top: 250px;
+    }
+
+    @include media(0px, 540px) {
+        top: 200px;
+    }
+}
+
+.next-btn {
+    width: 23px;
+    height: 11px;
+    background-color: transparent;
+    border: none;
+
+    position: absolute;
+    right: -4px;
+    z-index: 1;
+
+    @include media(0px, 540px) {
+        scale: 0.6;
+        margin-top: -10px;
+    }
+}
+
+.swiper-pagination>span {
+    margin: 30px 0 0 0 !important;
+
+    // @include media(0px, 540px) {
+    //     margin: 15px 0 0 0 !important;
+    // }
+}
+
+.swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background-color: $white;
+    opacity: 1;
+
+    @include media(0px, 540px) {
+        width: 4px;
+        height: 4px;
+    }
+}
+
+.swiper-pagination-bullet-active {
+    scale: 2;
+}
+
+.swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper-vertical>.swiper-pagination-bullets {
+    top: 0;
+    right: 0;
+    bottom: 50%;
+    transform: translateX(-50%);
+}
+
+// Hero wrapper
+.hero__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    transition: padding-top 0.2s ease;
+    padding-top: 270px;
+
+    @include media(0px, 1440px) {
+        padding-top: 200px;
+    }
+
+    @include mobile() {
+        padding-top: 150px;
+    }
+}
+
+.hero__content {
+    padding: 100px 0 30px 100px;
+    border-left: 2px solid $green;
+    transition: padding 0.2s ease;
+
+    @include media(0px, 1440px) {
+        padding: 50px 0 20px 50px;
+    }
+
+    @include mobile() {
+        padding: 20px 0 5px 20px;
+        border: none;
+    }
+}
+
+.hero__content h2 {
+    color: $white;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 131.7%;
+    text-transform: uppercase;
+    transition: font-size 0.2s ease;
+
+    span {
+        color: $green;
+    }
+
+    @include media(0px, 1440px) {
+        font-size: 48px;
+    }
+
+    @include mobile() {
+        font-size: 32px;
+    }
+
+    @include media(0px, 540px) {
+        font-size: 24px;
+    }
+}
+
+.hero__content p {
+    max-width: 517px;
+    color: $white;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 167%;
+    letter-spacing: 1.2px;
+    transition: font-size 0.2s ease;
+    margin-block: 16px 38px;
+
+    @include media(0px, 1440px) {
+        font-size: 18px;
+    }
+
+    @include mobile() {
+        max-width: 350px;
+        font-size: 14px;
+    }
+
+    @include media(0px, 540px) {
+        font-size: 10px;
+    }
+}
+
+.btn {
+    padding: 12px 30px;
+    border: 1px solid $green;
+    background-color: transparent;
+
+    color: $white;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 167%;
+    letter-spacing: 1.2px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: $green;
+        color: $white;
+    }
+
+    @include media(0px, 540px) {
+        font-size: 12px;
+    }
+}
+
+.hero_video-play {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-btn {
+    width: 78px;
+    height: 78px;
+    border: 1px solid $green;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 40%;
+        height: 40%;
+        margin-right: -5px;
+    }
+
+    @include media(0px, 1440px) {
+        width: 58px;
+        height: 58px;
+    }
+
+    @include mobile() {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+// Hero constroller
+.hero-control {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 60px;
+
+    z-index: 10;
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    @include media(0px, 1440px) {
+        padding: 0 30px;
+    }
+
+    @include mobile() {
+        padding: 0 15px;
+    }
+}
+
+.carusel_number-pagination {
+    margin-top: 168px;
+
+    color: $white;
+    font-size: 19.985px;
+    font-weight: 600;
+    line-height: 121.7%;
+
+    #prevNullet {
+        color: $white;
+        font-size: 26.647px;
+
+        @include mobile() {
+            font-size: 20px;
+        }
+    }
+
+    #lengthNullet {
+        color: $green;
+        font-size: 39.971px;
+
+        @include mobile() {
+            font-size: 24px;
+        }
+    }
+}
+
+.minsk__video-wrap {
+    display: flex;
+    height: 132px;
+    transition: height 200ms ease;
+
+    @include media(0px, 1440px) {
+        height: 100px;
+    }
+
+    @include mobile() {
+        height: 80px;
+    }
+
+    @include media(0px, 540px) {
+        height: 50px;
+    }
+}
+
+.minks__content {
+    width: 133px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.26);
+    backdrop-filter: blur(9.5px);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 27px;
+
+    @include mobile() {
+        width: 100px;
+        padding-left: 10px;
+    }
+
+    @include media(0px, 540px) {
+        width: 70px;
+    }
+}
+
+.minks__content h3 {
+
+    @include media(0px, 540px) {
+        font-size: 14px;
+    }
+}
+
+.minks__content span {
+    @include media(0px, 540px) {
+        font-size: 10px;
+    }
+}
+
+.minks__video {
+    position: relative;
+}
+
+.minks__video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.minks_play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 38px;
+    height: 38px;
+    border: 1px solid $green;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media(0px, 1440px) {
+        width: 28px;
+        height: 28px;
+    }
+
+    img {
+        width: 40%;
+        height: 40%;
+        margin-right: -5px;
+    }
+}

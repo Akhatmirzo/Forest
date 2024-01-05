@@ -1,0 +1,39 @@
+.partnery {
+    padding-block: 150px;
+
+    .container {
+        max-width: 1600px;
+        padding-inline: 60px;
+
+        @include tablet() {
+            padding: 0 30px;
+        }
+
+        @include mobile() {
+            padding: 0 15px;
+            margin-top: 50px;
+        }
+    }
+}
+
+.partnery__logo-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 50px;
+    justify-items: end;
+
+    @include media(0px, 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+
+    @include mobile() {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media(0px, 375px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+} 
+
